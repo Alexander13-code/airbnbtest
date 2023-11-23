@@ -1,0 +1,10 @@
+<h1>Put an apartment in locations</h1>
+<div class="newformapart">
+<%= simple_form_for @apartment do |f| %>
+  <%= f.input :title %>
+  <%= f.input :address %>
+  <%= f.input :price %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
+</div>

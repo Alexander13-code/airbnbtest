@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
-  get 'review/index'
-  get 'booking/index'
-  get 'booking/show'
-  get 'apartment/index'
-  get 'apartment/show'
-  get 'apartement/index'
-  get 'apartement/show'
   devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  # root "articles#index"
+  root to: 'apartments#index'
+
+  resources :apartments, only: %i[index show new create edit update destroy]
+
+  get 'reviews/index'
+  get 'bookings/index'
+  get 'bookings/show'
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
 end
